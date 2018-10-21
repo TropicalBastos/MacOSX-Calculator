@@ -51,7 +51,7 @@ background-color: white;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>61</y>
+      <y>60</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -75,7 +75,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>61</y>
+      <y>60</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -99,7 +99,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>61</y>
+      <y>60</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -123,7 +123,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>61</y>
+      <y>60</y>
       <width>61</width>
       <height>61</height>
      </rect>
