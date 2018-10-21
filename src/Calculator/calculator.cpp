@@ -1,5 +1,8 @@
 #include "calculator.h"
 
+Calculator::Calculator(){}
+Calculator::~Calculator(){}
+
 void Calculator::setMode(int m){
     this->mode = m;
 }

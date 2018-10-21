@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->divideButton = ui->divide;
     this->display = ui->display;
     this->initEventListeners();
+    this->calculatorHandle = new Calculator();
 }
 
 MainWindow::~MainWindow()
@@ -28,19 +29,24 @@ void MainWindow::initEventListeners(){
 }
 
 void MainWindow::add(){
-
+    qDebug("ADDING");
+    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    this->calculatorHandle->setMode(CalculatorMode::ADD);
 }
 
 void MainWindow::subtract(){
-
+    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    this->calculatorHandle->setMode(CalculatorMode::SUBTRACT);
 }
 
 void MainWindow::multiply(){
-
+    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    this->calculatorHandle->setMode(CalculatorMode::MULTIPLY);
 }
 
 void MainWindow::divide(){
-
+    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    this->calculatorHandle->setMode(CalculatorMode::DIVIDE);
 }
 
 double MainWindow::getDisplayNumber(){

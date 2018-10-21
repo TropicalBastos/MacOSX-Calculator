@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLabel>
+#include "../Calculator/calculator.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,7 @@ private:
     QPushButton* multiplyButton;
     QPushButton* divideButton;
     QLabel* display;
+    Calculator* calculatorHandle;
     void initEventListeners();
     double getDisplayNumber();
 
