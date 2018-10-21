@@ -14,7 +14,12 @@ class Calculator {
         Calculator();
         ~Calculator();
         void setMode(int mode);
-        double processArithmetic(double a, double b);
+        double processArithmetic();
+        void setLeftOperand(double num);
+        void setRightOperand(double num);
+        void clearOperands();
+        double getLeftOperand();
+        double getRightOperand();
 
     private:
         double add(double a, double b);
@@ -22,6 +27,8 @@ class Calculator {
         double multiply(double a, double b);
         double modulo(int a, int b);
         double divide(double a, double b);
+        double leftOperand;
+        double rightOperand;
         int mode;
 };
 

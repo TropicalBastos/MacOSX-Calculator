@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="display">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -119,7 +119,7 @@ QPushButton:pressed {
      <string>%</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="divide">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -190,7 +190,7 @@ QPushButton:pressed {
      <string>8</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="multiply">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -284,7 +284,7 @@ QPushButton:pressed {
      <string>5</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="subtract">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -401,7 +401,7 @@ QPushButton:pressed {
      <string>1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="add">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -473,7 +473,7 @@ QPushButton:pressed {
      <string>.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_19">
+   <widget class="QPushButton" name="equals">
     <property name="geometry">
      <rect>
       <x>180</x>

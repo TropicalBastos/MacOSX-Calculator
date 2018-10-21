@@ -4,7 +4,10 @@ void Calculator::setMode(int m){
     this->mode = m;
 }
 
-double Calculator::processArithmetic(double a, double b){
+double Calculator::processArithmetic(){
+    double a = this->getLeftOperand();
+    double b = this->getRightOperand();
+    this->clearOperands();
     switch(this->mode){
         case CalculatorMode::ADD:
             return this->add(a, b);
@@ -17,6 +20,28 @@ double Calculator::processArithmetic(double a, double b){
         case CalculatorMode::MODULO:
             return this->modulo(a, b);
     }
+    return 0;
+}
+
+void Calculator::setLeftOperand(double num){
+    this->leftOperand = num;
+}
+
+void Calculator::setRightOperand(double num){
+    this->rightOperand = num;
+}
+
+double Calculator::getLeftOperand(){
+    return this->leftOperand;
+}
+
+double Calculator::getRightOperand(){
+    return this->rightOperand;
+}
+
+void Calculator::clearOperands(){
+    this->leftOperand = 0;
+    this->rightOperand = 0;
 }
 
 double Calculator::add(double a, double b){
