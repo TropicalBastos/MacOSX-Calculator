@@ -27,13 +27,15 @@ SOURCES += \
         src/main.cpp \
         src/MainWindow/mainwindow.cpp \
         src/Calculator/calculator.cpp \
-        src/UnaryControls/unary_controls.cpp
+        src/UnaryControls/unary_controls.cpp \
+        src/Digit/digit.cpp
 
 HEADERS += \
         src/MainWindow/mainwindow.h \
         src/Calculator/calculator.h \
         src/UnaryControls/unary_controls.h \
-        src/DisplayInterface/display_interface.h
+        src/DisplayInterface/display_interface.h \
+        src/Digit/digit.h
 
 FORMS += \
         src/MainWindow/mainwindow.ui

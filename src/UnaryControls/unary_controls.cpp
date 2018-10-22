@@ -6,8 +6,6 @@ UnaryControls::UnaryControls(Calculator* calculatorHandle, QLabel* parentDisplay
     this->parentDisplay = parentDisplay;
 }
 
-UnaryControls::~UnaryControls(){}
-
 void UnaryControls::add(){
     qDebug("ADDING");
     this->calculatorHandle->setLeftOperand(this->getDisplayNumber());

@@ -11,7 +11,7 @@ class UnaryControls : public QObject, public DisplayInterface {
 
     public:
         UnaryControls(Calculator* calc, QLabel* parentDisplay);
-        ~UnaryControls();
+        ~UnaryControls(){}
         double getDisplayNumber();
 
     private:

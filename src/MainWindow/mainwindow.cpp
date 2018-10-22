@@ -23,9 +23,15 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::initEventListeners(){
+    /** Delegate all unary controls to the appropriate class */
     UnaryControls* unary = this->unaryControls;
     connect(this->addButton, SIGNAL(pressed()), unary, SLOT(add()));
     connect(this->subtractButton, SIGNAL(pressed()), unary, SLOT(subtract()));
     connect(this->multiplyButton, SIGNAL(pressed()), unary, SLOT(multiply()));
     connect(this->divideButton, SIGNAL(pressed()), unary, SLOT(divide()));
+
+    /** Delegate all digit based buttons to the digit control class */
+    QList<QPushButton *> allButtons = this->findChildren<QPushButton *>();
+    Digit* digitControls = new Digit(allButtons, this->calculatorHandle, this->display);
+    this->digitControls = digitControls;
 }
