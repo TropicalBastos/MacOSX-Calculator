@@ -11,8 +11,8 @@ enum CalculatorMode {
 
 class Calculator {
     public:
-        Calculator();
-        ~Calculator();
+        Calculator() : leftOperand(0), rightOperand(0), mode(CalculatorMode::ADD){};
+        ~Calculator(){};
         void setMode(int mode);
         double processArithmetic();
         void setLeftOperand(double num);
