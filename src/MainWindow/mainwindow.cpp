@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QString>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,9 +10,11 @@ MainWindow::MainWindow(QWidget *parent) :
     this->subtractButton = ui->subtract;
     this->multiplyButton = ui->multiply;
     this->divideButton = ui->divide;
+    this->equalsButton = ui->equals;
     this->display = ui->display;
-    this->initEventListeners();
     this->calculatorHandle = new Calculator();
+    this->unaryControls = new UnaryControls(this->calculatorHandle, this->display);
+    this->initEventListeners();
 }
 
 MainWindow::~MainWindow()
@@ -22,34 +23,9 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::initEventListeners(){
-    connect(this->addButton, SIGNAL(pressed()), this, SLOT(add()));
-    connect(this->subtractButton, SIGNAL(pressed()), this, SLOT(subtract()));
-    connect(this->multiplyButton, SIGNAL(pressed()), this, SLOT(multiply()));
-    connect(this->divideButton, SIGNAL(pressed()), this, SLOT(divide()));
-}
-
-void MainWindow::add(){
-    qDebug("ADDING");
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
-    this->calculatorHandle->setMode(CalculatorMode::ADD);
-}
-
-void MainWindow::subtract(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
-    this->calculatorHandle->setMode(CalculatorMode::SUBTRACT);
-}
-
-void MainWindow::multiply(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
-    this->calculatorHandle->setMode(CalculatorMode::MULTIPLY);
-}
-
-void MainWindow::divide(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
-    this->calculatorHandle->setMode(CalculatorMode::DIVIDE);
-}
-
-double MainWindow::getDisplayNumber(){
-    QString text = this->display->text();
-    return text.toDouble();
+    UnaryControls* unary = this->unaryControls;
+    connect(this->addButton, SIGNAL(pressed()), unary, SLOT(add()));
+    connect(this->subtractButton, SIGNAL(pressed()), unary, SLOT(subtract()));
+    connect(this->multiplyButton, SIGNAL(pressed()), unary, SLOT(multiply()));
+    connect(this->divideButton, SIGNAL(pressed()), unary, SLOT(divide()));
 }

@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLabel>
+#include <QString>
 #include "../Calculator/calculator.h"
+#include "../UnaryControls/unary_controls.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QLabel* display;
 
 private:
     Ui::MainWindow *ui;
@@ -24,16 +27,10 @@ private:
     QPushButton* subtractButton;
     QPushButton* multiplyButton;
     QPushButton* divideButton;
-    QLabel* display;
+    QPushButton* equalsButton;
     Calculator* calculatorHandle;
+    UnaryControls* unaryControls;
     void initEventListeners();
-    double getDisplayNumber();
-
-private slots:
-    void add();
-    void subtract();
-    void multiply();
-    void divide();
 };
 
 #endif // MAINWINDOW_H
