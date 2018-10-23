@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->multiplyButton = ui->multiply;
     this->divideButton = ui->divide;
     this->equalsButton = ui->equals;
+    this->cancelButton = ui->cancel;
     this->display = ui->display;
 }
 

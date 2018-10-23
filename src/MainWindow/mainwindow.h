@@ -33,6 +33,7 @@ private:
     QPushButton* multiplyButton;
     QPushButton* divideButton;
     QPushButton* equalsButton;
+    QPushButton* cancelButton;
     Calculator* calculatorHandle;
     UnaryControls* unaryControls;
     Digit* digitControls;
