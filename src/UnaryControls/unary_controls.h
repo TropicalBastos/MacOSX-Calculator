@@ -11,13 +11,14 @@ class UnaryControls : public QObject, public DisplayInterface {
     Q_OBJECT
 
     public:
-        UnaryControls(Calculator* calc, QLabel* parentDisplay);
+        UnaryControls(Calculator* calc, QLabel* parentDisplay, State* state = NULL);
         ~UnaryControls(){}
         double getDisplayNumber();
 
     private:
         QLabel* parentDisplay;
         Calculator* calculatorHandle;
+        State* state;
         void performLeftOperation();
 
     public slots:

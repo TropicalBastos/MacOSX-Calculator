@@ -9,6 +9,7 @@
 #include "../Calculator/calculator.h"
 #include "../UnaryControls/unary_controls.h"
 #include "../Digit/digit.h"
+#include "../State/state.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void setState(State state);
+    void initControls();
     QLabel* display;
 
 private:
@@ -33,6 +36,7 @@ private:
     Calculator* calculatorHandle;
     UnaryControls* unaryControls;
     Digit* digitControls;
+    State* state;
     void initEventListeners();
 };
 

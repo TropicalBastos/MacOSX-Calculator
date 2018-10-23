@@ -16,7 +16,7 @@ class Digit: public QObject {
     Q_OBJECT
 
     public:
-        Digit(QList<QPushButton *> buttons, Calculator*, QLabel* parentDisplay);
+        Digit(QList<QPushButton *> buttons, Calculator*, QLabel* parentDisplay, State* state);
         ~Digit(){};
         void filterDigitButtons(QList<QPushButton*>& buttons);
 
@@ -26,6 +26,7 @@ class Digit: public QObject {
     private:
         QLabel* parentDisplay;
         Calculator* calculatorHandle;
+        State* state;
 
 };
 

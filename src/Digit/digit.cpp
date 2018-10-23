@@ -1,8 +1,9 @@
 #include "digit.h"
 
-Digit::Digit(QList<QPushButton *> buttons, Calculator* calc, QLabel* parentDisplay){
+Digit::Digit(QList<QPushButton *> buttons, Calculator* calc, QLabel* parentDisplay, State* state = NULL){
     this->calculatorHandle = calc;
     this->parentDisplay = parentDisplay;
+    this->state = state;
     filterDigitButtons(buttons);
     for(int i = 0; i < buttons.length(); i++){
         QPushButton* digit = buttons.at(i);
@@ -13,13 +14,13 @@ Digit::Digit(QList<QPushButton *> buttons, Calculator* calc, QLabel* parentDispl
 void Digit::appendDigit(){
     QPushButton* pb = (QPushButton*) QObject::sender();
     QString digit = pb->text();
-    QString displayText = this->parentDisplay->text();
-    if(displayText == "0" || State.operationPerformed){
+    QString displayText = parentDisplay->text();
+    if(displayText == "0" || state->operationPerformed){
         displayText = "";
     }
     QString result = displayText + digit;
-    this->parentDisplay->setText(result);
-    State.operationPerformed = false;
+    parentDisplay->setText(result);
+    state->operationPerformed = false;
 }
 
 /**

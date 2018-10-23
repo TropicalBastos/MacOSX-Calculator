@@ -1,43 +1,47 @@
 #include "../MainWindow/mainwindow.h"
 #include "unary_controls.h"
 
-UnaryControls::UnaryControls(Calculator* calculatorHandle, QLabel* parentDisplay){
+UnaryControls::UnaryControls(Calculator* calculatorHandle, QLabel* parentDisplay, State* state){
     this->calculatorHandle = calculatorHandle;
     this->parentDisplay = parentDisplay;
+    this->state = state;
 }
 
 void UnaryControls::performLeftOperation(){
-    this->calculatorHandle->setLeftOperand(getDisplayNumber());
-    State.operationPerformed = true;
+    calculatorHandle->setLeftOperand(getDisplayNumber());
+    state->operationPerformed = true;
 }
 
 void UnaryControls::add(){
     performLeftOperation();
-    this->calculatorHandle->setMode(CalculatorMode::ADD);
+    calculatorHandle->setMode(CalculatorMode::ADD);
 }
 
 void UnaryControls::subtract(){
     performLeftOperation();
-    this->calculatorHandle->setMode(CalculatorMode::SUBTRACT);
+    calculatorHandle->setMode(CalculatorMode::SUBTRACT);
 }
 
 void UnaryControls::multiply(){
     performLeftOperation();
-    this->calculatorHandle->setMode(CalculatorMode::MULTIPLY);
+    calculatorHandle->setMode(CalculatorMode::MULTIPLY);
 }
 
 void UnaryControls::divide(){
     performLeftOperation();
-    this->calculatorHandle->setMode(CalculatorMode::DIVIDE);
+    calculatorHandle->setMode(CalculatorMode::DIVIDE);
 }
 
 void UnaryControls::equals(){
-    this->calculatorHandle->setRightOperand(this->getDisplayNumber());
-    double result = this->calculatorHandle->processArithmetic();
-    this->parentDisplay->setText(QString::number(result));
+    calculatorHandle->setRightOperand(getDisplayNumber());
+    qDebug() << calculatorHandle->getLeftOperand();
+    qDebug() << calculatorHandle->getRightOperand();
+    double result = calculatorHandle->processArithmetic();
+    qDebug() << result;
+    parentDisplay->setText(QString::number(result));
 }
 
 double UnaryControls::getDisplayNumber(){
-    QString text = this->parentDisplay->text();
+    QString text = parentDisplay->text();
     return text.toDouble();
 }

@@ -2,11 +2,11 @@
 #define STATE
 
 /**
- * Global state structure
+ * App states
  */ 
 
-static struct State {
+struct State {
     bool operationPerformed;
-} State { false };
+};
 
 #endif // STATE
