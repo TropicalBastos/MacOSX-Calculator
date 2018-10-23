@@ -19,6 +19,7 @@ class Digit: public QObject {
         Digit(QList<QPushButton *> buttons, Calculator*, QLabel* parentDisplay, State* state);
         ~Digit(){};
         void filterDigitButtons(QList<QPushButton*>& buttons);
+        bool displayHasPeriod();
 
     public slots:
         void appendDigit();

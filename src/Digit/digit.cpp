@@ -11,12 +11,27 @@ Digit::Digit(QList<QPushButton *> buttons, Calculator* calc, QLabel* parentDispl
     }
 }
 
+bool Digit::displayHasPeriod(){
+    QRegExp re("[.]+");
+    if(re.indexIn(parentDisplay->text(), 0) != -1){
+        return true;
+    }
+    return false;
+}
+
 void Digit::appendDigit(){
     QPushButton* pb = (QPushButton*) QObject::sender();
     QString digit = pb->text();
     QString displayText = parentDisplay->text();
     if(displayText == "0" || state->operationPerformed){
         displayText = "";
+    }
+    if(displayText == "" && digit == "."){
+        displayText = parentDisplay->text();
+    }
+    if(displayHasPeriod() && digit == "."){
+        state->operationPerformed = false;
+        return;
     }
     QString result = displayText + digit;
     parentDisplay->setText(result);
@@ -33,7 +48,7 @@ void Digit::filterDigitButtons(QList<QPushButton*>& buttons){
     QMutableListIterator<QPushButton*> iter(buttons);
     while(iter.hasNext()){
         QString buttonText = iter.next()->text();
-        QRegExp re("[0-9]*");
+        QRegExp re("[0-9.]*");
         if(!re.exactMatch(buttonText)){
             iter.remove();
         }
