@@ -4,7 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-    State.operationPerformed = false;
     QApplication a(argc, argv);
     MainWindow w;
     w.setWindowTitle("Calculator");

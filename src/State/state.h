@@ -1,5 +1,5 @@
-#ifndef APPSTATE 
-#define APPSTATE
+#ifndef STATE
+#define STATE
 
 /**
  * Global state structure
@@ -7,6 +7,6 @@
 
 static struct State {
     bool operationPerformed;
-} State;
+} State { false };
 
-#endif // APPSTATE
+#endif // STATE
