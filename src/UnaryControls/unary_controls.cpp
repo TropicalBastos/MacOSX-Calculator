@@ -6,24 +6,28 @@ UnaryControls::UnaryControls(Calculator* calculatorHandle, QLabel* parentDisplay
     this->parentDisplay = parentDisplay;
 }
 
+void UnaryControls::performLeftOperation(){
+    this->calculatorHandle->setLeftOperand(getDisplayNumber());
+    State.operationPerformed = true;
+}
+
 void UnaryControls::add(){
-    qDebug("ADDING");
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    performLeftOperation();
     this->calculatorHandle->setMode(CalculatorMode::ADD);
 }
 
 void UnaryControls::subtract(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    performLeftOperation();
     this->calculatorHandle->setMode(CalculatorMode::SUBTRACT);
 }
 
 void UnaryControls::multiply(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    performLeftOperation();
     this->calculatorHandle->setMode(CalculatorMode::MULTIPLY);
 }
 
 void UnaryControls::divide(){
-    this->calculatorHandle->setLeftOperand(this->getDisplayNumber());
+    performLeftOperation();
     this->calculatorHandle->setMode(CalculatorMode::DIVIDE);
 }
 

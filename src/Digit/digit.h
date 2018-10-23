@@ -10,6 +10,7 @@
 #include <QRegExp>
 #include <QDebug>
 #include "../Calculator/calculator.h"
+#include "../State/state.h"
 
 class Digit: public QObject {
     Q_OBJECT

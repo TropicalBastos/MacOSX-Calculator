@@ -5,6 +5,7 @@
 #include <QLabel>
 #include "../Calculator/calculator.h"
 #include "../DisplayInterface/display_interface.h"
+#include "../State/state.h"
 
 class UnaryControls : public QObject, public DisplayInterface {
     Q_OBJECT
@@ -17,6 +18,7 @@ class UnaryControls : public QObject, public DisplayInterface {
     private:
         QLabel* parentDisplay;
         Calculator* calculatorHandle;
+        void performLeftOperation();
 
     public slots:
         void add();

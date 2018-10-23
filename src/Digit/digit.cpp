@@ -14,11 +14,12 @@ void Digit::appendDigit(){
     QPushButton* pb = (QPushButton*) QObject::sender();
     QString digit = pb->text();
     QString displayText = this->parentDisplay->text();
-    if(displayText == "0"){
+    if(displayText == "0" || State.operationPerformed){
         displayText = "";
     }
     QString result = displayText + digit;
     this->parentDisplay->setText(result);
+    State.operationPerformed = false;
 }
 
 /**

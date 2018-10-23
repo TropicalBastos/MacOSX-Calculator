@@ -35,7 +35,8 @@ HEADERS += \
         src/Calculator/calculator.h \
         src/UnaryControls/unary_controls.h \
         src/DisplayInterface/display_interface.h \
-        src/Digit/digit.h
+        src/Digit/digit.h \
+        src/State/state.h
 
 FORMS += \
         src/MainWindow/mainwindow.ui

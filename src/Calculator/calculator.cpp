@@ -5,22 +5,24 @@ void Calculator::setMode(int m){
 }
 
 double Calculator::processArithmetic(){
+    double result = 0;
     double a = this->getLeftOperand();
     double b = this->getRightOperand();
     this->clearOperands();
     switch(this->mode){
         case CalculatorMode::ADD:
-            return this->add(a, b);
+            result = this->add(a, b);
         case CalculatorMode::SUBTRACT:
-            return this->subtract(a, b);
+            result = this->subtract(a, b);
         case CalculatorMode::MULTIPLY:
-            return this->multiply(a, b);
+            result = this->multiply(a, b);
         case CalculatorMode::DIVIDE:
-            return this->divide(a, b);
+            result = this->divide(a, b);
         case CalculatorMode::MODULO:
-            return this->modulo(a, b);
+            result = this->modulo(a, b);
     }
-    return 0;
+    this->setLeftOperand(result);
+    return result;
 }
 
 void Calculator::setLeftOperand(double num){
