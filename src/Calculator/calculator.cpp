@@ -12,14 +12,19 @@ double Calculator::processArithmetic(){
     switch(this->mode){
         case CalculatorMode::ADD:
             result = this->add(a, b);
+            break;
         case CalculatorMode::SUBTRACT:
             result = this->subtract(a, b);
+            break;
         case CalculatorMode::MULTIPLY:
             result = this->multiply(a, b);
+            break;
         case CalculatorMode::DIVIDE:
             result = this->divide(a, b);
+            break;
         case CalculatorMode::MODULO:
             result = this->modulo(a, b);
+            break;
     }
     this->setLeftOperand(result);
     return result;

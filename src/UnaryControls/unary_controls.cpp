@@ -34,10 +34,7 @@ void UnaryControls::divide(){
 
 void UnaryControls::equals(){
     calculatorHandle->setRightOperand(getDisplayNumber());
-    qDebug() << calculatorHandle->getLeftOperand();
-    qDebug() << calculatorHandle->getRightOperand();
     double result = calculatorHandle->processArithmetic();
-    qDebug() << result;
     parentDisplay->setText(QString::number(result));
 }
 
