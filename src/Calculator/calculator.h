@@ -6,7 +6,8 @@ enum CalculatorMode {
     SUBTRACT,
     MULTIPLY,
     MODULO,
-    DIVIDE
+    DIVIDE,
+    NONE
 };
 
 class Calculator {

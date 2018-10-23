@@ -6,27 +6,31 @@ void Calculator::setMode(int m){
 
 double Calculator::processArithmetic(){
     double result = 0;
-    double a = this->getLeftOperand();
-    double b = this->getRightOperand();
-    this->clearOperands();
+    double a = getLeftOperand();
+    double b = getRightOperand();
+    clearOperands();
     switch(this->mode){
         case CalculatorMode::ADD:
-            result = this->add(a, b);
+            result = add(a, b);
             break;
         case CalculatorMode::SUBTRACT:
-            result = this->subtract(a, b);
+            result = subtract(a, b);
             break;
         case CalculatorMode::MULTIPLY:
-            result = this->multiply(a, b);
+            result = multiply(a, b);
             break;
         case CalculatorMode::DIVIDE:
-            result = this->divide(a, b);
+            result = divide(a, b);
             break;
         case CalculatorMode::MODULO:
-            result = this->modulo(a, b);
+            result = modulo(a, b);
+            break;
+        default:
+            result = add(a, 0);
             break;
     }
-    this->setLeftOperand(result);
+    setMode(CalculatorMode::NONE);
+    setLeftOperand(result);
     return result;
 }
 
