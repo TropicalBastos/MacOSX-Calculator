@@ -2,7 +2,7 @@
 #define STATE
 
 /**
- * App states
+ * App state
  */ 
 
 struct State {

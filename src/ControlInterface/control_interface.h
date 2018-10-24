@@ -4,7 +4,7 @@
 class ControlInterface {
     public:
         ControlInterface(){}
-        ~ControlInterface(){}
+        virtual ~ControlInterface(){}
         virtual void performLeftOperation() = 0;
 };
 
