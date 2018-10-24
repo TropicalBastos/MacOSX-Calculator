@@ -12,7 +12,11 @@ enum CalculatorMode {
 
 class Calculator {
     public:
-        Calculator() : leftOperand(0), rightOperand(0), mode(CalculatorMode::ADD){};
+        Calculator() : 
+            leftOperand(0), 
+            rightOperand(0), 
+            mode(CalculatorMode::ADD){};
+
         ~Calculator(){};
         void setMode(int mode);
         double processArithmetic();

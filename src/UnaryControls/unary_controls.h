@@ -6,8 +6,9 @@
 #include "../Calculator/calculator.h"
 #include "../DisplayInterface/display_interface.h"
 #include "../State/state.h"
+#include "../ControlInterface/control_interface.h"
 
-class UnaryControls : public QObject, public DisplayInterface {
+class UnaryControls : public QObject, public DisplayInterface, public ControlInterface {
     Q_OBJECT
 
     public:

@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     this->divideButton = ui->divide;
     this->equalsButton = ui->equals;
     this->cancelButton = ui->cancel;
+    this->toggleSignButton = ui->toggleSign;
+    this->moduloButton = ui->modulo;
     this->display = ui->display;
 }
 
@@ -28,6 +30,12 @@ void MainWindow::initEventListeners(){
     connect(this->multiplyButton, SIGNAL(pressed()), unary, SLOT(multiply()));
     connect(this->divideButton, SIGNAL(pressed()), unary, SLOT(divide()));
     connect(this->equalsButton, SIGNAL(pressed()), unary, SLOT(equals()));
+
+    /** Delegate all operational controls to the appropriate class */
+    OperationalControls* op = this->operationalControls;
+    connect(this->cancelButton, SIGNAL(pressed()), op, SLOT(cancel()));
+    connect(this->moduloButton, SIGNAL(pressed()), op, SLOT(modulo()));
+    connect(this->toggleSignButton, SIGNAL(pressed()), op, SLOT(toggleSign()));
 }
 
 void MainWindow::setState(State state){
@@ -39,11 +47,12 @@ void MainWindow::setState(State state){
  */
 void MainWindow::initControls(){
     this->calculatorHandle = new Calculator();
-    this->unaryControls = new UnaryControls(this->calculatorHandle, this->display, this->state);
+    this->unaryControls = new UnaryControls(calculatorHandle, display, state);
+    this->operationalControls = new OperationalControls(calculatorHandle, display, state);
     initEventListeners();
 
     /** Delegate all digit based buttons to the digit control class */
     QList<QPushButton *> allButtons = this->findChildren<QPushButton *>();
-    Digit* digitControls = new Digit(allButtons, this->calculatorHandle, this->display, this->state);
+    Digit* digitControls = new Digit(allButtons, calculatorHandle, display, state);
     this->digitControls = digitControls;
 }

@@ -28,7 +28,8 @@ SOURCES += \
         src/MainWindow/mainwindow.cpp \
         src/Calculator/calculator.cpp \
         src/UnaryControls/unary_controls.cpp \
-        src/Digit/digit.cpp
+        src/Digit/digit.cpp \
+        src/OperationalControls/operational_controls.cpp
 
 HEADERS += \
         src/MainWindow/mainwindow.h \
@@ -36,7 +37,9 @@ HEADERS += \
         src/UnaryControls/unary_controls.h \
         src/DisplayInterface/display_interface.h \
         src/Digit/digit.h \
-        src/State/state.h
+        src/State/state.h \
+        src/OperationalControls/operational_controls.h \
+        src/ControlInterface/control_interface.h
 
 FORMS += \
         src/MainWindow/mainwindow.ui

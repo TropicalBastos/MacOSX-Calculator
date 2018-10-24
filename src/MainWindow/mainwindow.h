@@ -8,6 +8,7 @@
 #include <QList>
 #include "../Calculator/calculator.h"
 #include "../UnaryControls/unary_controls.h"
+#include "../OperationalControls/operational_controls.h"
 #include "../Digit/digit.h"
 #include "../State/state.h"
 
@@ -34,8 +35,11 @@ private:
     QPushButton* divideButton;
     QPushButton* equalsButton;
     QPushButton* cancelButton;
+    QPushButton* moduloButton;
+    QPushButton* toggleSignButton;
     Calculator* calculatorHandle;
     UnaryControls* unaryControls;
+    OperationalControls* operationalControls;
     Digit* digitControls;
     State* state;
     void initEventListeners();

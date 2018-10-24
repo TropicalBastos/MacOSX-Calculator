@@ -79,7 +79,7 @@ QPushButton:pressed {
      <string>C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="toggleSign">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -103,7 +103,7 @@ QPushButton:pressed {
      <string>+/-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="modulo">
     <property name="geometry">
      <rect>
       <x>120</x>
