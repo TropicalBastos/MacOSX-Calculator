@@ -27,12 +27,12 @@ void OperationalControls::modulo(){
 }
 
 void OperationalControls::toggleSign(){
-    QRegExp re("$-.+");
+    QRegExp re("^-.+");
     QString displayText = parentDisplay->text();
-    if(re.exactMatch(displayText)){
+    if(!re.exactMatch(displayText)){
         displayText = "-" + displayText;
     } else {
-        displayText = displayText.remove(0, 1);
+        displayText.remove('-');
     }
     parentDisplay->setText(displayText);
 }
