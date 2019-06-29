@@ -1,2 +1,9 @@
 .DS_Store
 Calculator.pro.user
+Calculator.app
+/*.o
+.qmake.stash
+Makefile
+/moc_*
+/ui_mainwindow.h
+.vscode
